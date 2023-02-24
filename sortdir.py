@@ -42,6 +42,6 @@ for k in sorted_paths.keys():
     for p in sorted_paths[k]:
         try:
             shutil.move(p,dest)
-        except Exeception as err:
+        except Exception as err:
             print("{}".format(err))
                 
