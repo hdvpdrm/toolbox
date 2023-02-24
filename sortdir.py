@@ -40,5 +40,8 @@ for a in args:
 for k in sorted_paths.keys():
     dest = os.getcwd()+"/"+k
     for p in sorted_paths[k]:
-        shutil.move(p,dest)
+        try:
+            shutil.move(p,dest)
+        except Exeception as err:
+            print("{}".format(err))
                 
