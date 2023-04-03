@@ -14,3 +14,8 @@ Example:
 
 So this utility takes different number of arguments, where left is name of directory and right values<br>
 are extension, that will be moved into mentioned directories. Directories are created from current working directory.<br>
+
+# FRD(find and rename duplicates)
+Purpose of this script is obvious, but it was written to avoid problems, that may occur when you use directory sorting<br>
+script, because there may be files with the same names, but placed in different directories, so some files will not be moved.<br>
+To avoid this problem simply use this tiny script.
