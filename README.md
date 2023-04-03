@@ -12,6 +12,9 @@ This script is dedicated to sort directory by chosen extensions.<br>
 Example:
 ```sortdir audio=.flac,.wav,.mp3 arcs=.zip,.rar docs=.docx, .docx,.pdf```
 
+Also it has optional argument ```-wd```. It can be places anywhere.<br>
+So it forces script to walk through whole directory tree, not only current working directory.<br>
+
 So this utility takes different number of arguments, where left is name of directory and right values<br>
 are extension, that will be moved into mentioned directories. Directories are created from current working directory.<br>
 
