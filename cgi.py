@@ -56,4 +56,4 @@ else:
             process_dir(f)
             
 
-system("echo .gitignore >> .gitignore")
+os.system("echo .gitignore >> .gitignore")
