@@ -22,3 +22,13 @@ are extension, that will be moved into mentioned directories. Directories are cr
 Purpose of this script is obvious, but it was written to avoid problems, that may occur when you use directory sorting<br>
 script, because there may be files with the same names, but placed in different directories, so some files will not be moved.<br>
 To avoid this problem simply use this tiny script.
+
+# CGI(create gitignore)
+This script is used to create .gitignore file.<br>
+Example:
+```cgi -f .sln .txt .user .filter -d Release .git```
+After` ```-f``` mark you pass file extensions to add to gitignore and<br>
+after ```-d``` mark you pass directories to ignore.<br>
+
+To walk through whole directory of project, you should use ```-wd``` option.<br>
+
