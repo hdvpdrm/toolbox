@@ -32,3 +32,9 @@ after ```-d``` mark you pass directories to ignore.<br>
 
 To walk through whole directory of project, you should use ```-wd``` option.<br>
 
+# SRM(safe rm)
+This script rewrites files n times(default value is 5) and then removes it. There will be ability to recover it, but its content will be noise.<br>
+Example:<br>
+```srm kitten.png 100```<br>
+```srm kitten.png```<br>
+
