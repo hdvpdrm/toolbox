@@ -38,3 +38,9 @@ Example:<br>
 ```srm kitten.png 100```<br>
 ```srm kitten.png```<br>
 
+# Merger(directory merging script)
+This script compares two directories and find files with the same name. Then it walks through list of all matched files and asks user to find out should they be merged.<br>
+Example:<br>
+```merger dir1 dir2```<br>
+```merger dir1 dir2 wd```<br>
+
