@@ -16,9 +16,18 @@ def get_all_files(dir):
         files = files + list(map(lambda n:(root,n),f))
     return files
 
+def sha256sum(filename):
+    '''compute file hash'''
+    with open(filename, 'rb', buffering=0) as f:
+        m = hashlib.sha256()
+        m.update(f.read())
+        return m.hexdigest()
+
 def match_same_files(dir1,dir2):
     '''return iter with matched file'''
-    return ((name1,name2) for name1, name2 in itertools.product(dir1,dir2) if name1[1] == name2[1])
+    eq_hash = lambda p1,p2: sha256sum(p1) == sha256sum(p2)
+    mp = lambda t:t[0]+"/"+t[1]
+    return ((name1,name2) for name1, name2 in itertools.product(dir1,dir2) if name1[1] == name2[1] and eq_hash(mp(name1),mp(name2)))
 
 #check arguments
 if len(sys.argv) != 3 and len(sys.argv) != 4:
