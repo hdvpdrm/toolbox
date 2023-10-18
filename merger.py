@@ -1,4 +1,4 @@
-#merger.py
+#!/usr/bin/python3
 #This script is dedicated to match 2 directories and find files with the same names
 #if they are the same, script asks user should they be merged and if user is agree
 #then script merges two files

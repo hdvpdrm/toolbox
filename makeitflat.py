@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #MAKEITFLAT##
 #############
 #This script is dedicated to convert nested directory system(or it can be called dir tree)

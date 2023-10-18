@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #srm - safe rm or safe removing script
 #since deleted files can be recovered, this script rewrites file
 #with noise and then delete it with standard tool of current OS
