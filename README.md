@@ -1,10 +1,13 @@
 # system-tools
-place to store py scripts, solving different  system tasks. 
+python scripts collection to solve different system tasks. 
 
-# Make it Flat
+### Files
+
+
+## Make it Flat
 Destroy directory tree and move all files to top directory.<br>
 
-# Sort directory
+## Sort directory
 This script is dedicated to sort directory by chosen extensions.<br>
 Example:
 ```sortdir audio=.flac,.wav,.mp3 arcs=.zip,.rar docs=.docx, .docx,.pdf```
@@ -15,29 +18,15 @@ So it forces script to walk through whole directory tree, not only current worki
 So this utility takes different number of arguments, where left is name of directory and right values<br>
 are extension, that will be moved into mentioned directories. Directories are created from current working directory.<br>
 
-# FRD(find and rename duplicates)
+## FRD(find and rename duplicates)
 Purpose of this script is obvious, but it was written to avoid problems, that may occur when you use directory sorting<br>
 script, because there may be files with the same names, but placed in different directories, so some files will not be moved.<br>
 To avoid this problem simply use this tiny script.
 
-# CGI(create gitignore)
-This script is used to create .gitignore file.<br>
-Example:
-```cgi -f .sln .txt .user .filter -d Release .git```
-After` ```-f``` mark you pass file extensions to add to gitignore and<br>
-after ```-d``` mark you pass directories to ignore.<br>
 
-To walk through whole directory of project, you should use ```-wd``` option.<br>
 
-# SRM(safe rm)
-This script rewrites files n times(default value is 5) and then removes it. There will be ability to recover it, but its content will be noise.<br>
-Example:<br>
-```srm kitten.png 100```<br>
-```srm kitten.png```<br>
+### SQL
 
-# Merger(directory merging script)
-This script compares two directories and find files with the same name. Then it walks through list of all matched files and asks user to find out should they be merged.<br>
-Example:<br>
-```merger dir1 dir2```<br>
-```merger dir1 dir2 wd```<br>
 
+# GTCN
+Script retrieves names of each column of specified table from sqlite3 table.
