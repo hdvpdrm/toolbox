@@ -30,3 +30,14 @@ To avoid this problem simply use this tiny script.
 ### GTCN
 Script retrieves names of each column of specified table from sqlite3 table.<br>
 Usage example: ```python gtcn.py places.sqlite table1 [table2 ... tableN]```
+
+### Foxhist
+This script shows visiting frequency of each page from history.<br>
+Basic usage:```python foxhist.py root```<br>
+To define minimal visiting counter pass cap parameter:<br>
+Example:```python foxhist.py root cap=n```<br>
+Also you can specify location of database file:<br>
+Example:```python foxhist.py root db=place```
+
+Also you can compute frequence char-by-char, omitting root argument. It means, if some url is different from<br>
+another one in terms of strings, then they are different urls. It doesn't matter they have the same hostname.<br>
