@@ -23,7 +23,8 @@ Purpose of this script is obvious, but it was written to avoid problems, that ma
 script, because there may be files with the same names, but placed in different directories, so some files will not be moved.<br>
 To avoid this problem simply use this tiny script.
 
-
+### iet(ignore emacs tilde)
+Very simple script to avoid echo blabla.c~ >> .gitignore. 
 
 ## SQL
 
