@@ -66,10 +66,11 @@ try:
     cursor = conn.execute("SELECT url, visit_count FROM moz_places")
     result = cursor.fetchall()
     total_elements_n = len(result)
-    result = sorted(result,key=itemgetter(1),reverse=True)
-    result = result if not count_root_url else count_roots(result)
     
+    result = result if not count_root_url else count_roots(result)
     result = list(filter(lambda a: a[1] > cap,result))
+    result = sorted(result,key=lambda x:x[1],reverse=True)
+    
     max_len = get_max_url_len(result)
 
     print("elements shown:",len(result))
