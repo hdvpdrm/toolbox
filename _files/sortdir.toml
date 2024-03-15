@@ -1,0 +1,3 @@
+script = "sortdir"
+desc   = "sort files by their extension."
+examples = [["python sortdir.py images=.png,.jpg docs=.txt,.pdf","move all png and jpg files to images. move txt and pdf files to docs"],["python sortdir.py audio=.flac vid=.mp4 -wd","move files, but walk through whole directory tree, starting with current directory"]]

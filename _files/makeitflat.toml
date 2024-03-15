@@ -1,0 +1,3 @@
+script = "makeitflat"
+desc   = "convert nested directory tree into flat directory."
+examples = [["python makeitflat.py","script doesn't have any argument."]]

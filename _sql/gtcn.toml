@@ -1,0 +1,3 @@
+script = "gtcn"
+desc   = "get column names from passed sqlite3 table"
+examples = [["python gtcn.py db.sqlite table1 [table2 tableN]","prints columns names for each passed table"]]

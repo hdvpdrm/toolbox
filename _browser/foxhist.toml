@@ -1,0 +1,7 @@
+script = "foxhist"
+desc   = "compute statistic for firefox browser's history and print it sorted"
+examples = [
+	 ["python foxhist.py","shows result based on different urls."],
+	 ["python foxhist.py root","shows result based on matched root urls."],
+	 ["python foxhist.py cap=2 db=~/.mozilla/firefox/somestrangepath/places.sqlite", "shows pages with visiting count above 2"]
+]
