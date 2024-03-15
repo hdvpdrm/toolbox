@@ -1,5 +1,5 @@
 # toolbox
-This repository WAS python scripts collection to solve different system tasks.<br>
+This repository ```WAS``` python scripts collection to solve different system tasks.<br>
 Now to see what it is, you need to look ```python toolbox --help```<br>
 ```sh
 usage: toolbox [-h] [-l] [-i INSPECT] [-e [EXECUTE ...]]
