@@ -4,11 +4,15 @@ import tomllib
 import argparse
 import subprocess
 
+def gtd():
+    return os.path.abspath(os.path.dirname(__file__))
 def get_all_dirs():
-    return (x for x in os.listdir() if x.startswith("_"))
+    not_magic = lambda x: x not in ("__init__.py","__main__.py")
+    not_tilde = lambda x: not x.endswith("~")#it is very annoying shit from emacs
+    return (x for x in os.listdir(gtd()) if x.startswith("_") and not_magic(x) and not_tilde(x))
 def get_scripts():
     '''returns dict, where key is category(browser,files,sql,e.t.c) and value is generator of related scripts docs'''
-    get_scripts = lambda d: (d+"/"+x for x in os.listdir(d) if x.endswith(".toml"))
+    get_scripts = lambda d: (d+"/"+x for x in os.listdir(gtd()+"/"+d) if x.endswith(".toml"))
 
     scripts = {}
     for d in get_all_dirs():
@@ -18,12 +22,12 @@ def get_scripts():
 def associate_script_by_dir():
     d = {}
     for dir in get_all_dirs():
-        for script in (x for x in os.listdir(dir) if x.endswith(".py")):
+        for script in (x for x in os.listdir(gtd()+"/"+dir) if x.endswith(".py")):
             d[script] = dir
     return d
 
 def read_single_script_info(script_path):
-    with open(script_path,"rb") as f:
+    with open(gtd()+"/"+script_path,"rb") as f:
         info =  tomllib.load(f)
         return (info["script"],dict([x for x in info.items() if "script" not in x]))
     
@@ -92,5 +96,4 @@ def invoke(annotations):
             commands[key](annotations, val)
     
 
-annotations = read_scripts_annotations()
-invoke(annotations)
+
