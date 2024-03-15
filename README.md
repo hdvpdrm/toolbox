@@ -32,6 +32,8 @@ Very simple script to avoid echo blabla.c~ >> .gitignore.
 Script retrieves names of each column of specified table from sqlite3 table.<br>
 Usage example: ```python gtcn.py places.sqlite table1 [table2 ... tableN]```
 
+## Browser
+
 ### Foxhist
 This script shows visiting frequency of each page from history.<br>
 Basic usage:```python foxhist.py root```<br>
