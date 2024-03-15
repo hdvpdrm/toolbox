@@ -1,3 +1,3 @@
 script = "iet"
 desc   = "add emacs ~ files to the end of .gitignore file in current directory"
-examples = [["python iet.py","script doesn't have any argument."]]
+examples = [["iet","script doesn't have any argument."]]

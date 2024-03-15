@@ -1,3 +1,3 @@
 script = "frd"
 desc   = "find-rename-duplicates. If there are dir1/file and dir2/file, dir2/file will be renamed to dir2/file1."
-examples = [["python frd.py" ,"script doesn't have any argument."]]
+examples = [["frd" ,"script doesn't have any argument."]]
