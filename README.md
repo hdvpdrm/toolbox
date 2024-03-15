@@ -1,5 +1,19 @@
 # toolbox
-python scripts collection to solve different system tasks. 
+This repository WAS python scripts collection to solve different system tasks.<br>
+Now to see what it is, you need to look ```python toolbox --help```<br>
+```sh
+usage: toolbox [-h] [-l] [-i INSPECT] [-e [EXECUTE ...]]
+
+script to manage/invoke different system script of this package
+
+options:
+  -h, --help            show this help message and exit
+  -l, --list            list all available scripts
+  -i INSPECT, --inspect INSPECT
+                        read detailed information about provided script
+  -e [EXECUTE ...], --execute [EXECUTE ...]
+                        execute existing script
+```
 
 ## Files
 
