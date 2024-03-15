@@ -2,18 +2,25 @@ import os
 import sys
 import tomllib
 import argparse
+import subprocess
 
-
+def get_all_dirs():
+    return (x for x in os.listdir() if x.startswith("_"))
 def get_scripts():
     '''returns dict, where key is category(browser,files,sql,e.t.c) and value is generator of related scripts docs'''
-    all_script_dirs = (x for x in os.listdir() if x.startswith("_"))
     get_scripts = lambda d: (d+"/"+x for x in os.listdir(d) if x.endswith(".toml"))
 
     scripts = {}
-    for d in all_script_dirs:
+    for d in get_all_dirs():
         scripts[d] = get_scripts(d)
     return scripts
 
+def associate_script_by_dir():
+    d = {}
+    for dir in get_all_dirs():
+        for script in (x for x in os.listdir(dir) if x.endswith(".py")):
+            d[script] = dir
+    return d
 
 def read_single_script_info(script_path):
     with open(script_path,"rb") as f:
@@ -47,22 +54,36 @@ def show_all_scripts(annotations,arg):
         desc = annotations[k]["desc"]
         pd(k,desc,diff)
 
-        examples_list = annotations[k]["examples"]
-        for i, pair in enumerate(examples_list):
-            example, annot = pair
-            print(" "*5 +"#{}".format(i)+" "+example)
-            print(" "*5+annot+"\n")
-            
-            
-            
+
+def inspect(annotations,arg):
+    if not does_script_exist(arg,annotations.keys()):
+        print("toolbox: error: script doesn't exist :{}".format(arg))
+        sys.exit(1)
+
+    for i, pair in enumerate(annotations[arg]["examples"]):
+        example, annot = pair
+        print("#{} - {}".format(i,example))
+        print(annot+"\n")
         
-        
-        
+def execute(annotations,arg):
+    arg[0] = arg[0]+".py"
+    scripts = associate_script_by_dir()
+    dir = scripts[arg[0]]
+    arg[0] = dir+"/"+arg[0]
+
+    try:
+        subprocess.run(arg)
+    except Exception as e:
+        print("toolbox error: failed to execute subprocess!")
+        print(str(e))
     
-    
-def execute(annotations):
+        
+            
+def invoke(annotations):
     commands = {
-        "list":show_all_scripts
+        "list":show_all_scripts,
+        "inspect":inspect,
+        "execute":execute
         }
     
     args = vars(parse_args())
@@ -72,4 +93,4 @@ def execute(annotations):
     
 
 annotations = read_scripts_annotations()
-execute(annotations)
+invoke(annotations)
