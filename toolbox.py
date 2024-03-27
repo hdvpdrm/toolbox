@@ -73,8 +73,7 @@ def execute(annotations,arg):
     arg[0] = arg[0]+".py"
     scripts = associate_script_by_dir()
     dir = scripts[arg[0]]
-    arg[0] = dir+"/"+arg[0]
-
+    arg[0] = gtd()+"/"+dir+"/"+arg[0]
     try:
         subprocess.run(arg)
     except Exception as e:
