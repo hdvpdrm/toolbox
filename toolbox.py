@@ -43,7 +43,7 @@ def parse_args():
     parser = argparse.ArgumentParser(prog="toolbox",description="script to manage/invoke different system script of this package")
     parser.add_argument("-l","--list"   , help="list all available scripts",action="count")
     parser.add_argument("-i","--inspect", help="read detailed information about provided script")
-    parser.add_argument("-e","--execute", help="execute existing script",nargs="*")
+    parser.add_argument("-e","--execute", help="execute existing script",nargs="*", type=str)
     return  parser.parse_args()
 
 def does_script_exist(script,scripts):
