@@ -24,8 +24,8 @@ for root, dirs, files in os.walk(os.getcwd()):
     for filename in files:
         if filename in saved and check_root(root):
             a = root+"/"+filename
-            b = root+"/"+get_new_name(filename,duplicate_counter
-            os.rename(a,b))
+            b = root+"/"+get_new_name(filename,duplicate_counter)
+            os.rename(a,b)
             print("{} -> {}".format(a,b))
             duplicate_counter = duplicate_counter + 1
         else:
