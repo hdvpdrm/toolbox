@@ -68,12 +68,31 @@ def inspect(annotations,arg):
         example, annot = pair
         print("#{} - {}".format(i,example))
         print(annot+"\n")
-        
+
+def is_executable(f):
+    return os.access(f,os.X_OK)
+def make_executable(f):
+    print("{} is not executable. Do you want to make this script executable?(yes/no)".format(f))
+    i = input()
+    if i == "no":
+        return False
+    elif i == "yes":
+        subprocess.run(["chmod","u+x",f])
+        return True
+    else:
+        make_executable()
+    
+    
 def execute(annotations,arg):
     arg[0] = arg[0]+".py"
     scripts = associate_script_by_dir()
     dir = scripts[arg[0]]
     arg[0] = gtd()+"/"+dir+"/"+arg[0]
+    
+    if not is_executable(f):
+        if not make_executable(f):
+            return None
+        
     try:
         subprocess.run(arg)
     except Exception as e:
