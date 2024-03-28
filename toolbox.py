@@ -89,8 +89,8 @@ def execute(annotations,arg):
     dir = scripts[arg[0]]
     arg[0] = gtd()+"/"+dir+"/"+arg[0]
     
-    if not is_executable(f):
-        if not make_executable(f):
+    if not is_executable(arg[0]):
+        if not make_executable(arg[0]):
             return None
         
     try:
