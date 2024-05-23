@@ -86,6 +86,10 @@ def make_executable(f):
 def execute(annotations,arg):
     arg[0] = arg[0]+".py"
     scripts = associate_script_by_dir()
+    if(arg[0] not in scripts.keys()):
+        print("toolbox: error:: you are trying to execute {}! It doesn't exist!".format(arg[0]))
+        sys.exit(-1)
+    
     dir = scripts[arg[0]]
     arg[0] = gtd()+"/"+dir+"/"+arg[0]
     
