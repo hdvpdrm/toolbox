@@ -40,6 +40,9 @@ To avoid this problem simply use this tiny script.
 ### iet(ignore emacs tilde)
 Very simple script to avoid echo blabla.c~ >> .gitignore. 
 
+### chc_(ChangeCase)
+Script change case of provided files to lower/upper.
+
 ## SQL
 
 ### GTCN
