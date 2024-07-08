@@ -1,0 +1,3 @@
+script = "chc_"
+desc = "change the case for provided files to lower/upper"
+examples = [["chc MAPGAMES.WL1 SOUNDS.WL1 !lower", "convert all WL1 files to lower"], ["chc imlower.txt !upper", "convert imlower.txt to upper case"]]
